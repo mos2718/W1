@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #Button1
+        {
+            height: 41px;
+            width: 116px;
+        }
+        #Button2
+        {
+            width: 111px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        <input id="Button1" type="button" value="Large" onclick="return Button1_onclick()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Button2" type="button" value="Small" onclick="return Button2_onclick()" /></p>
+    <p>
+        <img id="Img1" alt="" src="1.jpg" height="300" width="400"  /></p>
+    <p>
+        &nbsp;</p>
+<script type="text/javascript" src="drag-drop.js"></script>
+<script type="text/javascript">
+    //注册drag事件
+     var I1 = document.getElementById('Img1');
+    makeDrag(I1);
+
+    function Button1_onclick() {
+        var I1 = document.getElementById('Img1');
+        I1.width = I1.width * 1.2;
+        I1.height = I1.height * 1.2;
+    }
+
+    function Button2_onclick() {
+        var I1 = document.getElementById('Img1');
+        I1.width = I1.width * 0.8;
+        I1.height = I1.height * 0.8;
+    }
+
+</script>
+
+
+</body>
+</html>
