@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+
+<h2>標準化醫護表單建構步驟(發展前端網頁或 APP 表單，與 FHIR server 整合應用)</h2>
+    <p>&nbsp;</p>
+<h4>產生及上傳 FHIR data</h4>
+<ol>
+  <li>依據醫療健康照護情境，取得 FHIR server 上病人、就醫資訊 </li>
+  <li>設計 HTML FORM 輸入表單(表單模板)</li>
+  <li>確立 HTML FORM 與 FHIR resource 對應</li>
+  <li>JS 程式讀取表單內容，轉換成 FHIR XML or JSON data</li>
+  <li>HTTP　post data to FHIR server</li>
+</ol>
+
+    <p>&nbsp;</p>
+<h4>查詢及呈現 FHIR server 上的表單資料</h4>
+<ol>
+  <li>依據醫療健康照護情境，取得 FHIR server 上病人、就醫資訊 </li>
+  <li>搭配病人、就醫、時間等條件，使用 FHIR API  查詢 FHIR server 上的表單資料</li>
+  <li>JS 解析  FHIR XML or JSON data</li>
+  <li>使用 JS 將 FHIR  data 排版呈現(HTML 版面)</li>
+</ol>
+
+    <p>&nbsp;</p>
+     
+</body>
+</html>
