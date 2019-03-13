@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>取得或設定 HTML 標籤內容</title>
+</head>
+<body>
+    <h2>取得或設定 HTML 標籤內容</h2><br />
+
+    <h3>取得或設定排版標簽包含的內容</h3>
+    取得或設定段落(p), 標題( h*), 表格(table 中td) 等排版標籤的內容. 語法:<br />
+   <ol>
+      <li>document.getElementById("tagID").innerHTML = "&lt;a href='URL&#39;&gt;要連結的網址&lt;/a&gt;"; //指定其內含的 HTML 內容</li>
+      <li>document.getElementById("tagID").innerTEXT = &quot;Hello world&quot;;&nbsp; // 指定其內含之純文字內容</li>
+   </ol>
+    範例:<br />
+     <a href="setTagContent.html">設定 p 標籤內容</a><br />
+     <a href="for99.html">設定 table 標籤內容: 99 乘法表</a>    <br /><br />
+
+    <h3>取得或設定標簽的屬性</h3>
+    可設定或任何標籤之屬性(但須先知道標籤有哪些屬性, 可請教 Google 大神! 語法:<br />
+   <ol>
+      <li> document.getElementById("imgTagID").src ="***.gif"; // 設定img標籤的圖片來源</li>
+      <li>document.getElementById("tagID").style.fontSize = "50pt"; // 設定所包含內容之字體大小</li>
+   </ol>
+    範例:<br />
+     <a href="OnMouseOver.htm">設定 p 標籤包含之文字字形大小屬性</a><br />
+    <a href="OnMouseOverOut_imgSrc.html">利用滑鼠移入移出事件，設定影像標籤 src 來源屬性。</a> <br />
+     <a href="BG_rgb_Seeting.htm">設定 body bgcolor 顏色</a> <br />
+    <a href="SumOfInteger.htm">加法程式，取得即設定 text input value。需進行輸入型態檢查(防呆:foolproof)，確保輸入為數值</a><br />
+   
+   <br />
+
+
+    </body>
+</html>

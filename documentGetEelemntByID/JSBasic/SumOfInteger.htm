@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #Text1
+        {
+            height: 20px;
+            width: 87px;
+        }
+        #Text2
+        {
+            width: 92px;
+        }
+        #Text3
+        {
+            width: 90px;
+        }
+        #Button1
+        {
+            height: 26px;
+            width: 77px;
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+// <![CDATA[
+
+        function Button1_onclick() {
+            var a, b, c;
+            a = document.getElementById("Text1").value;
+            b = document.getElementById("Text2").value;
+            if ( isNaN(a) == true ||isNaN(b) == true)
+           { 
+                c = "Not a number"; 
+            }
+            else {
+                c = parseInt(a) + parseInt(b);
+            }
+            document.getElementById("Text3").value = c;
+
+        }
+
+// ]]>
+    </script>
+</head>
+<body>
+
+    <p>
+        <input id="Text1" type="text" /> +
+        <input id="Text2" type="text" /> =<input id="Text3" type="text" /></p>
+    <p>
+        <input id="Button1" type="button" value="button" onclick="return Button1_onclick()" /></p>
+
+</body>
+</html>
