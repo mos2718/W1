@@ -1,0 +1,40 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+      
+    <script >
+
+        function Button1_onclick() {
+		    var rate_value;
+            if (document.getElementById('r1').checked) {  rate_value = document.getElementById('r1').value; }
+            if (document.getElementById('r2').checked) {  rate_value = document.getElementById('r2').value; }
+            if (document.getElementById('r3').checked) {  rate_value = document.getElementById('r3').value; }
+			alert(rate_value);  
+			
+			/* another way to get radio input checked value 
+			var rates = document.getElementsByName('rate');
+            var rate_value;
+            for(var i = 0; i < rates.length; i++){
+               if(rates[i].checked){rate_value = rates[i].value;    
+			                        alert(rate_value);
+			                       }
+			   }
+			*/   
+			   
+			   
+        }
+    </script>
+</head>
+<body>
+
+  <div id="rates">
+  <input type="radio" id="r1" name="rate" value="Fixed Rate"> Fixed Rate
+  <input type="radio" id="r2" name="rate" value="Variable Rate"> Variable Rate
+  <input type="radio" id="r3" name="rate" value="Multi Rate" checked="checked"> Multi Rate  
+  </div>
+  
+    <p>
+        <input id="Button1" type="button" value="button" onclick="Button1_onclick()" /></p>
+
+</body>
+</html>

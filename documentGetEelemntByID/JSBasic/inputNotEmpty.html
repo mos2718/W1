@@ -24,20 +24,12 @@
         }
     </style>
     <script language="javascript" type="text/javascript">
-// <![CDATA[
 
         function Button1_onclick() {
             var a, b, c;
             a = document.getElementById("Text1").value;
-            b = document.getElementById("Text2").value;
-            if ( isNaN(a) == true ||isNaN(b) == true)
-           { 
-                c = "Not a number"; 
-            }
-            else {
-                c = parseInt(a) + parseInt(b);
-            }
-            document.getElementById("Text3").value = c;
+            if ( a=="") alert("input is empty");
+			// if ( a.length == 0) alert("input is empty");   //or check a length == 0
 
         }
 
@@ -47,8 +39,7 @@
 <body>
 
     <p>
-        <input id="Text1" type="text" /> +
-        <input id="Text2" type="text" /> =<input id="Text3" type="text" /></p>
+        <input id="Text1" type="text" />      
     <p>
         <input id="Button1" type="button" value="button" onclick="Button1_onclick()" /></p>
 
