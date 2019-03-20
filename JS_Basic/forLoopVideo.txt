@@ -1,0 +1,13 @@
+JS for loop videos
+
+JS 迴圈介紹 https://youtu.be/a3lUV7vFmK8
+
+等差級數程式範例 https://youtu.be/K9q1NtbiSb4
+
+利率計算程式 https://youtu.be/5DDckJL8DPU
+
+JS迴圈產生 99 乘法表-1 https://youtu.be/RaiYDBpSDDA
+
+JS 迴圈產生 99 乘法表-2 https://youtu.be/BSpkjtuozPI
+
+Table insertRow insertCell 應用說明 https://youtu.be/aHOWdjwUGhI

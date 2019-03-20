@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Guess the number / 0712</title>
+</head>
+<script>
+var i = 0;
+var j = 0;
+function reset() {
+i = Math.floor((Math.random() * 100) + 1);
+//alert(i);
+j = 1;
+}
+function number() {
+if( j == 0 ){
+alert("Please set number first!!!");
+}
+else if(document.getElementById("answer").value > 100 || document.getElementById("answer").value < 0 ){
+alert("The Range is 1 - 100 !");
+}
+else if(document.getElementById("answer").value == i ){
+alert("BINGO~~~~~");
+}
+else if(document.getElementById("answer").value > i ){
+alert("TOO BIGGGGGG!");
+}
+else if(document.getElementById("answer").value < i ){
+alert("too small...");
+}
+else{
+alert("ERROR");
+}
+}
+</script>
+<body>
+<center>
+<button onclick="reset()">SET NUMBER</button>　||　
+<input id="answer"></input>　||　
+<button onclick="number()">Submit</button>
+</center>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+var a = ["簡小琦", "林蘇於", "蔡大林"];
+var b = ["在火車上", "在七星潭", "在廁所", "在演唱會", "在夜市"];
+var c = ["煮火鍋", "練舉重", "拍寫真", "做直播", "比腿長"];
+function aaa()
+        {var i,j,k ;
+		i = Math.floor(Math.random() * 3);
+		j = Math.floor(Math.random() * 5);
+		k = Math.floor(Math.random() * 5);		
+	    document.getElementById("demo").innerHTML = a[i] +b[j] +c[k];   }
+</script>
+</head>
+<body>
+<p id="demo"></p>
+<button onclick= "aaa()">Click me</button>
+</body>
+<html>

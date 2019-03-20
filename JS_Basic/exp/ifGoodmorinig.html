@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var curHour;
+curHour = 14;  // new Date().getHours(); // get current hour
+if (curHour > 5 && curHour < 12  ) {
+    document.getElementById("demo").innerHTML = "good morning!";
+} 
+else if (curHour >= 12 && curHour < 18  )
+{
+    document.getElementById("demo").innerHTML = "good afternoon!";
+}
+else {document.getElementById("demo").innerHTML = "good night!";
+}
+
+</script>
+
+</body>
+</html>
