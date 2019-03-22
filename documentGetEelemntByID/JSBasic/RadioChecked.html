@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #Text1
+        {
+            height: 20px;
+            width: 87px;
+        }
+        #Text2
+        {
+            width: 92px;
+        }
+        #Text3
+        {
+            width: 90px;
+        }
+        #Button1
+        {
+            height: 26px;
+            width: 77px;
+        }
+    </style>
+    <script >
+    var checkedValue;
+	checkedValue ="unknow";
+	function check() {
+	if(document.getElementById("r1").checked == true) 
+	   { checkedValue  = document.getElementById("r1").value;  }
+	if(document.getElementById("r2").checked == true) 
+	   { checkedValue  = document.getElementById("r2").value;  }	   
+
+	alert(checkedValue);
+}
+	
+	
+    </script>
+</head>
+<body>
+<form>
+  What color do you prefer?<br>
+  <input type="radio" name="colors" id="r1" value="red" >Red<br>
+  <input type="radio" name="colors" id="r2" value="blue" >Blue
+</form>
+
+<button onclick="check()">Check me</button>
+
+
+</body>
+</html>
