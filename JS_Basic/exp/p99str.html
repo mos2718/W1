@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+td {	 border: 1px solid #dddddd; }
+</style>
+</head>
+
+<body>
+<table id="t1"> </table>
+<script>
+
+ var table1;
+ table1 = document.getElementById("t1");
+ var retStrAll ="";
+ for(j=1;j<= 9;j++)
+   {
+   var retStr ="<tr>";
+   for(i=1;i<= 9;i++)
+     {  retStr = retStr + "<td>" + i + "*" + j + "=" + i * j+ "</td>";
+       }
+     retStr = retStr + "</tr>";
+	retStrAll = retStrAll + retStr;
+   }
+ table1.innerHTML = retStrAll;
+
+</script>
+
+</body>
+</html>
