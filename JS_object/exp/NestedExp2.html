@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    var myObj = {
+        "name":"John",
+        "age":30,
+        "cars": ["Ford", "BMW", "Fiat"]
+    }
+    document.getElementById("demo").innerHTML = myObj.cars[1];
+    //document.getElementById("demo").innerHTML += myObj.cars.car2 + "<br>";
+    //or:
+    //document.getElementById("demo").innerHTML += myObj.cars["car2"];
+</script>
+
+</body>
+</html>
