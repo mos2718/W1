@@ -1,0 +1,3 @@
+{"name":"丁丁","telecom":"0967888","gender":"male","birthDate":"1974-12-25"}
+{"name":"林志玲","telecom":"09888888","gender":"female","birthDate":"1974-12-25"}
+{"name":"aaaa","telecom":"12345678","gender":"male","birthDate":"1974-12-25"}
