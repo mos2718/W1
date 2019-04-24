@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+   
+</head>
+<body>
+
+    <p>
+        &nbsp;</p>
+    <p>
+        初始值:&nbsp;<input id="Text1" type="text" /> 公差:&nbsp; <input id="Text2" type="text" /> 最大值: <input id="Text3" type="text" />
+        </p>
+    <p>
+        &nbsp;</p>
+    <p>
+        <input id="Button1" type="button" onclick="Button1_onclick()" value="sum" /><input id="Text4" type="text" /></p>
+    <p>
+        &nbsp;</p>
+       <script >
+           // <![CDATA[
+
+           function Button1_onclick() {
+               var a, b, c, ret;
+               a = document.getElementById("Text1").value;
+               b = document.getElementById("Text2").value;
+               c = document.getElementById("Text3").value;
+               if (isNaN(a) == true || isNaN(b) == true || isNaN(c))
+               { 
+                   ret = "Not a number"; 
+               }
+               else {
+                   var i;
+                   ret = 0;
+                   var ia,ib,ic;
+                   ia =Number(a);
+                   ib =Number(b);
+                   ic =Number(c);
+                   for (i = ia ; i <= ic ; i = i + ib)
+                       ret = ret + i;
+                 
+               }
+               document.getElementById("Text4").value = ret;
+
+           }
+            </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>upload </title>
+<script src="Cookie.js"></script> 
+<script src="HTTP_IO.js"></script>
+    <style type="text/css">
+        #myFile {
+            width: 706px;
+        }
+    </style>
+
+</head>
+<body>
+<h3 id="h1"> </h3>
+<h3>題目1. *******************************************************。 </h3>
+<h3>題目2. *********************************************************。</h3>
+ 
+ <br />
+
+<button onclick="uploadExam()">確認上傳</button> <br/>
+  <input id="in1" type="radio" name="exam" value="t1" checked="true" /> 題目1 <br/>
+  <input id="in2" type="radio" name="exam" value="t2" /> 題目2 <br/>
+  <textarea id="a1" rows="300" cols="140">
+
+</textarea>
+  
+
+<script >
+    var stdID = getCookie("stdID");
+    var stdName = getCookie("stdName");
+    document.getElementById("h1").innerHTML = stdID + stdName;
+
+    function uploadExam() {
+        var x = document.getElementById("a1");
+        var retXML;
+        retXML = x.value;
+        alert(retXML);
+        var stdID = getCookie("stdID");
+        var stdName = getCookie("stdName");
+        var uploadName = "/post?saveFileName=" + stdID + stdName + "ttt";
+        var r1 = document.getElementById("in1");
+        if (r1.checked == true) uploadName += "1";
+        else uploadName += "2";
+        HTTPPostData(uploadName, retXML);
+        
+    }
+ 
+</script> 
+</body>
+</html>

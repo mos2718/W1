@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 45px;
+            width: 260px;
+        }
+    </style>
+<script src="Cookie.js"></script> 
+<script >
+  
+    function chkLogin() {
+        var stdID, stdName;
+        stdID = document.getElementById("stdID").value;
+        //alert(stdID);
+        stdName = document.getElementById("stdName").value;
+       // alert(stdName);
+        if (stdID == "" || stdName == "") alert("請輸入學號姓名");
+        else {
+              setCookie("stdID", stdID, 1);
+              setCookie("stdName", stdName, 1);
+              window.open("List.html");
+			  //window.open("uploadText2.html");
+             // document.getElementById("L1").hidden = false;
+        }
+
+    }
+</script> 
+ 
+</head>
+<body>
+    <h3>參考資料:<a href="ref.zip">下載連結</a> 。 </h3>
+    <p>
+        輸入學號姓名&nbsp; <a id="L1" hidden="true" href="Question.html"> 登入成功，請點選進入問題網頁 </a></p>
+    <p>
+        學號:
+        <input id="stdID" type="text" /></p>
+    <p>
+        姓名:
+        <input id="stdName" type="text" /></p>
+    <p>
+        <input id="Button1" onclick="chkLogin()" type="button" value="button" /></p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+
+</body>
+</html>

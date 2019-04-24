@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>upload </title>
+<script src="Cookie.js"></script> 
+<script src="HTTP_IO.js"></script>
+    <style type="text/css">
+        #myFile {
+            width: 706px;
+        }
+    </style>
+
+</head>
+<body>
+<h3 id="h1"> </h3>
+<h3>題目1. 使用 JS 程式搭配 HTML table 標籤，產生一個 11* 11 之乘法表，<a href="11.png">如連結圖片</a> 。 </h3>
+<h3>題目2. 在 html 網頁當中，新增姓名(text)、及性別(radio) 之輸入選項 ，再加入input button， button 點選(click)後，提示(alert) ***先生(or 女士)您好。 *** 為輸入的姓名，先生或女士可由輸入之性別判斷。</h3>
+<h3>題目3. 設計一個累加程式，包含初始值、公差、最大值三個輸入，點選按鈕後，可輸出累加結果，<a href="sum.png">如連結圖片</a> 。 </h3>
+<h3>題目4. 使用 HTML canvas 配合 JS 程式，在網頁中繪製微笑圖形 <a href="face.png">如連結圖片</a> 。 </h3>
+ <br />
+
+<button onclick="uploadExam()">確認上傳</button> <br/>
+  <input id="in1" type="radio" name="exam" value="t1" checked="true" /> 題目1 <br/>
+  <input id="in2" type="radio" name="exam" value="t2" /> 題目2 <br/>
+ <input id= "in3" type="radio" name="exam" value="t3" /> 題目3 <br/>
+ <input id= "in4" type="radio" name="exam" value="t4" /> 題目4 <br/>
+  <textarea id="a1" rows="300" cols="140">
+
+</textarea>
+  
+
+<script >
+    var stdID = getCookie("stdID");
+    var stdName = getCookie("stdName");
+    document.getElementById("h1").innerHTML = stdID + stdName;
+
+    function uploadExam() {
+        var x = document.getElementById("a1");
+        var retXML;
+        retXML = x.value;
+        alert(retXML);
+        var stdID = getCookie("stdID");
+        var stdName = getCookie("stdName");
+        var uploadName = "/post?saveFileName=" + stdID + stdName + "time";
+        uploadName +=  getTime();
+        uploadName +=  "exam";
+        var r1 = document.getElementById("in1");
+        var r2 = document.getElementById("in2");
+        var r3 = document.getElementById("in3");
+        var r4 = document.getElementById("in4");
+        if (r1.checked == true)
+        {
+            uploadName += "1";
+            //alert("第一題上傳成功");
+            HTTPPostData(uploadName, retXML);
+        }
+        else if (r2.checked == true)
+        {
+            uploadName += "2";
+            //alert("第二題上傳成功"); 
+            HTTPPostData(uploadName, retXML);
+        }
+        else if (r3.checked == true)
+        {
+            uploadName += "3";
+          //  alert("第三題上傳成功");
+            HTTPPostData(uploadName, retXML);
+        }
+        else if (r4.checked == true)
+        {
+            uploadName += "4";
+        //    alert("第四題上傳成功");
+            HTTPPostData(uploadName, retXML);
+        }
+        else  { alert("請選擇上傳第幾題"); }
+        
+        //HTTPPostData(uploadName, retXML);
+        //x.disabled = true;
+    }
+    function getTime() {
+        var d = new Date();
+        var mm = d.getMonth() + 1; // getMonth() is zero-based
+        var dd = d.getDate();
+        var hr = d.getHours();
+        var mi = d.getMinutes();
+        var se = d.getSeconds();
+        var ret;
+        ret = (hr > 9 ? '' : '0') + hr;
+        ret += (mi > 9 ? '' : '0') + mi;
+        ret += (se > 9 ? '' : '0') + se;
+        return ret;
+
+    };
+</script> 
+</body>
+</html>
