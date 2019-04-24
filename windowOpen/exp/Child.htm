@@ -1,0 +1,29 @@
+﻿<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>開啟的新視窗</title>
+
+<script language="JavaScript">
+
+// 更改父視窗的資訊
+function changeStatus(strMsg){
+   //以 window.opener 取得父視窗物件
+   if (window.opener && !window.opener.closed) 
+    window.opener.document.getElementById('hid').innertHTML =strMsg;
+//	window.opener.document.getElementById('hid').childNodes[0].nodeValue ="aaa";
+     // window.opener.document.getElementById('hid').childNodes[0].nodeValue   = strMsg;
+}
+
+</script>
+</head>
+<body>
+<h2>開啟的新視窗</h2>
+<hr>
+<form>
+
+<input type=button value="關閉開啟的新視窗" onclick="window.close();">
+<input type=button value="更改父視窗狀態列文字" onclick="changeStatus('父視窗文字被更新')">
+</form>
+</body>
+</html>
+

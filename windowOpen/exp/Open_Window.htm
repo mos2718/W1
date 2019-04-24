@@ -1,0 +1,30 @@
+﻿<html> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>視窗的開啟與關閉</title>
+<script language="JavaScript">
+var winID = null;
+// 開啟視窗
+function openWindow(){
+   // winID 為子視窗物件
+   winID=window.open('Child.htm',"displayWindow","resizable=no,width=300,height=340") 
+ 
+}
+// 關閉視窗
+function closeWindow(){
+   if(winID && winID.open && !winID.closed)
+       winID.close();
+}
+</script>
+</head>
+<body onunload="closeWindow()">
+<h2>視窗的開啟與關閉</h2>
+<hr>
+<form>
+<input type=button value="開啟視窗" onclick="openWindow()">
+<input type=button value="關閉視窗" onclick="closeWindow()">
+
+</form>
+</body>
+</html>
+
