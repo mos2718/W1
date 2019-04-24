@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 43px;
+            width: 140px;
+        }
+        table, th, td {
+                 border: 1px solid black;         }  
+    </style>
+ <script src="Cookie.js"></script> 
+ <script src="addTableEvent.js"></script>
+ <script>	
+     var myObj = {
+         "resourceType": "Bundle",
+         "id": "83c0de7b-f603-4e08-ad8c-49bfabf8cc34",
+         "meta": {
+             "lastUpdated": "2019-04-22T02:24:28.426+00:00"
+         },
+         "type": "searchset",
+         "total": 10,
+         "link": [
+           {
+               "relation": "self",
+               "url": "http://hapi.fhir.org/baseDstu3/Patient?_format=json&organization=1856069"
+           }
+         ],
+         "entry": [
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856173",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856173",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:15:32.323+00:00"
+                   },
+                   "identifier": [
+                      {
+                          "use": "usual",
+                          "system": "身分證字號",
+                          "value": "U123456888",
+                          "assigner": {
+                              "reference": "TZH001",
+                              "display": "器官移植中心"
+                          }
+                      }
+                   ],
+                   "name": [
+                     {
+                         "text": "趙光印"
+                     }
+                   ],
+                   "gender": "male",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856172",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856172",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:15:11.564+00:00"
+                   },
+
+                   "identifier": [
+                     {
+                         "use": "usual",
+                         "system": "身分證字號",
+                         "value": "P223456888",
+                         "assigner": {
+                             "reference": "TZH001",
+                             "display": "器官移植中心"
+                         }
+                     }
+                   ],
+                   "name": [
+                     {
+                         "text": "林帶玉"
+                     }
+                   ],
+                   "gender": "female",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856170",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856170",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:14:51.501+00:00"
+                   },
+                   "identifier": [
+                       {
+                           "use": "usual",
+                           "system": "身分證字號",
+                           "value": "K123456777",
+                           "assigner": {
+                               "reference": "TZH001",
+                               "display": "器官移植中心"
+                           }
+                       }
+                   ],
+                   "name": [
+                     {
+                         "text": "武大郎"
+                     }
+                   ],
+                   "gender": "male",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856169",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856169",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:14:30.451+00:00"
+                   },
+                   "identifier": [
+                     {
+                         "use": "usual",
+                         "system": "身分證字號",
+                         "value": "U223456666",
+                         "assigner": {
+                             "reference": "TZH001",
+                             "display": "器官移植中心"
+                         }
+                     }
+                   ],
+                   "name": [
+                     {
+                         "text": "蘇蓉蓉"
+                     }
+                   ],
+                   "gender": "female",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856168",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856168",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:12:30.835+00:00"
+                   },
+                   "identifier": [
+                     {
+                         "use": "usual",
+                         "system": "身分證字號",
+                         "value": "U223456555",
+                         "assigner": {
+                             "display": "器官移植中心"
+                         }
+                     }
+                   ],
+                   "name": [
+                     {
+                         "text": "陳源源"
+                     }
+                   ],
+                   "gender": "female",
+                   "birthDate": "1962-11-27",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856167",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856167",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:12:10.499+00:00"
+                   },
+                   "identifier": [
+                       {
+                           "use": "usual",
+                           "system": "身分證字號",
+                           "value": "U223456444",
+                           "assigner": {
+                               "reference": "TZH001",
+                               "display": "器官移植中心"
+                           }
+                       }
+                   ],
+                   "name": [
+                     {
+                         "text": "李非非"
+                     }
+                   ],
+                   "gender": "female",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856166",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856166",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:11:42.086+00:00"
+                   },
+                   "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "身分證字號",
+                        "value": "U1234456333",
+                        "assigner": {
+                            "reference": "TZH001",
+                            "display": "器官移植中心"
+                        }
+                    }
+                   ],
+                   "name": [
+                     {
+                         "text": "吳發財"
+                     }
+                   ],
+                   "gender": "male",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856165",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856165",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T02:11:35.516+00:00"
+                   },
+                   "identifier": [
+                       {
+                           "use": "usual",
+                           "system": "身分證字號",
+                           "value": "G223456222",
+                           "assigner": {
+                               "reference": "TZH001",
+                               "display": "器官移植中心"
+                           }
+                       }
+                   ],
+                   "name": [
+                     {
+                         "text": "邱大山"
+                     }
+                   ],
+                   "gender": "female",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           },
+
+           {
+               "fullUrl": "http://hapi.fhir.org/baseDstu3/Patient/1856076",
+               "resource": {
+                   "resourceType": "Patient",
+                   "id": "1856076",
+                   "meta": {
+                       "versionId": "1",
+                       "lastUpdated": "2019-04-22T01:33:27.708+00:00"
+                   },
+                   "identifier": [
+                     {
+                         "use": "usual",
+                         "system": "身分證字號",
+                         "value": "V1223456111",
+                         "assigner": {
+                             "reference": "TZH001",
+                             "display": "器官移植中心"
+                         }
+                     }
+                   ],
+                   "name": [
+                     {
+                         "text": "黃小明"
+                     }
+                   ],
+                   "gender": "male",
+                   "birthDate": "1970-01-01",
+                   "managingOrganization": {
+                       "reference": "Organization/1856069"
+                   }
+               },
+               "search": {
+                   "mode": "match"
+               }
+           }
+         ]
+     };
+
+ </script>
+ <script>
+	  
+  function rowClickFunction(cid) {
+        //  alert("id:" + cid);
+      setCookie("patientID", cid, 1);
+
+         // match clicked id with JSON data id
+         for (var i = 0; i < myObj.entry.length; i++) {
+             if (cid == myObj.entry[i].resource.id) {
+                 //  alert(myObj.entry[i].resource.name[0].text);
+                 setCookie("patientName", myObj.entry[i].resource.name[0].text, 1);
+                 setCookie("gender", myObj.entry[i].resource.gender, 1);
+             }
+         }
+         window.open("Detail.html");
+     }
+  
+
+function showData() {
+                     //    var data = myObj.entry[0].resource.name[0].text;  //name[0].text;
+                     //    alert(data);
+              
+				var tableStr = "<tr> <th >id</th><th>name</th><th>gender</th><th>birthDate</th></tr>";
+
+                for (i = 0; i <myObj.entry.length; i++) {
+                     // alert(myObj[i].name);
+                    var trStr = "<tr>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.id;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.name[0].text;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr +myObj.entry[i].resource.gender;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.birthDate;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "</tr>";
+                    tableStr = tableStr + trStr;
+                }
+  
+                document.getElementById("t1").innerHTML = tableStr;
+                addRowHandlers("t1");   // add event to table t1
+              
+            }
+   </script>			
+
+</head>
+<body style="height: 780px">
+
+      <p>
+        <input id="Button1" onclick="showData();" type="button" value="data to table" /></p>
+        <table id = "t1"   />
+</body>
+
+</html>
