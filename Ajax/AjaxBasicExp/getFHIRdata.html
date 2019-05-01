@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 43px;
+            width: 140px;
+        }
+
+        #TextArea1 {
+            height: 527px;
+            width: 940px;
+        }
+    </style>
+   
+</head>
+<body>
+
+    <p>
+        <input id="Button1" onclick="getData();"  type="button" value="getData" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>
+        <textarea id="TextArea1" name="S1"></textarea></p>
+
+</body>
+        <script>
+  
+        function getData() {
+			  var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                     document.getElementById("TextArea1").innerHTML =      this.responseText;
+                     }
+              };
+	    //Happy FHIR server 	https://fhirtest.uhn.ca/	  
+        xhttp.open("GET", "http://hapi.fhir.org/baseDstu3/Patient/1638656", true);
+        xhttp.send();  
+
+        }
+
+       
+        </script>
+</html>

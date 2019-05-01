@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 43px;
+            width: 140px;
+        }
+        #Button2 {
+            height: 39px;
+            width: 118px;
+        }
+        #TextArea1 {
+            height: 527px;
+            width: 940px;
+        }
+        #Text1 {
+            width: 273px;
+            height: 33px;
+        }
+    </style>
+ 
+    <script src="HTTP_IO.js"></script>
+</head>
+<body>
+
+    <p>
+         <input id="Text1"  type="text"  />
+        <input id="Button1" onclick="getData();"  type="button" value="getData" />&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+         <input id="Button2" onclick="showData();" type="button" value="ShowData" /></p>
+
+    <p>
+        <textarea id="TextArea1" name="S1"></textarea></p>
+
+</body>
+        <script>
+            
+            
+            function getData() {
+                var inputValue;
+                inputValue = document.getElementById("Text1").value;
+                var sUrl = "SmartInput.aspx?sColor=" + inputValue + "&timestamp=" + new Date().getTime();
+                HTTPGetData(sUrl);
+            }
+
+            function showData() {
+               // alert(ret);
+                document.getElementById("TextArea1").innerText = ret;
+
+            }
+        </script>
+</html>

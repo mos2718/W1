@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ajax實現自動提示的文本框</title>
+<style>
+<!--
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px; padding:0px; margin:5px;
+}
+form{padding:0px; margin:0px;}
+input{
+	/* 用戶輸入框的樣式 */
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px; border:1px solid #000000;
+	width:200px; padding:1px; margin:0px;
+}
+#popup{
+	/* 提示框div塊的樣式 */
+	position:absolute; width:202px;
+	color:#004a7e; font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	left:41px; top:25px;
+}
+#popup.show{
+	/* 顯示提示框的邊框 */	
+	border:1px solid #004a7e;
+}
+#popup.hide{
+	/* 隱藏提示框的邊框 */
+	border:none;
+}
+/* 提示框的樣式風格 */
+ul{
+	list-style:none;
+	margin:0px; padding:0px;
+}
+li.mouseOver{
+	background-color:#004a7e;
+	color:#FFFFFF;
+}
+li.mouseOut{
+	background-color:#FFFFFF;
+	color:#004a7e;
+}
+-->
+</style>
+<script language="javascript">
+var oInputField;	//考慮到很多函數中都要使用
+var oPopDiv;		//因此採用全局變量的形式
+var oColorsUl;
+var xmlHttp;
+function createXMLHttpRequest(){
+	if(window.ActiveXObject)
+	   {//alert("Use MS ActiveX Object"); 
+		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	else if(window.XMLHttpRequest)
+		{//alert("Use Standard XMLHttpRequest"); 
+		xmlHttp = new XMLHttpRequest();
+		
+		}
+}
+function initVars(){
+	//初始化變量
+	oInputField = document.forms["myForm1"].colors;
+	oPopDiv = document.getElementById("popup");
+	oColorsUl = document.getElementById("colors_ul");
+}
+function clearColors(){
+	//清除提示內容
+	for(var i=oColorsUl.childNodes.length-1;i>=0;i--)
+		oColorsUl.removeChild(oColorsUl.childNodes[i]);
+	oPopDiv.className = "hide";
+}
+function setColors(the_colors){
+	//顯示提示框，傳入的參數即為匹配出來的結果組成的數組
+	clearColors();	//每輸入一個字母就先清除原先的提示，再繼續
+	oPopDiv.className = "show";
+	var oLi;
+	for(var i=0;i<the_colors.length;i++){
+		//將匹配的提示結果逐一顯示給用戶
+		oLi = document.createElement("li");
+		oColorsUl.appendChild(oLi);
+		oLi.appendChild(document.createTextNode(the_colors[i]));
+
+		oLi.onmouseover = function(){
+			this.className = "mouseOver";	//鼠標經過時高亮
+		}
+		oLi.onmouseout = function(){
+			this.className = "mouseOut";	//離開時恢復原樣
+		}
+		oLi.onclick = function(){
+			//用戶點擊某個匹配項時，設置輸入框為該項的值
+			oInputField.value = this.firstChild.nodeValue;
+			clearColors();	//同時清除提示框
+		}
+	}
+}
+function findColors(){
+	initVars();		//初始化變量
+	if(oInputField.value.length > 0){
+		createXMLHttpRequest();		//將用戶輸入發送給服務器
+		var sUrl = "SmartInput.aspx?sColor=" + oInputField.value + "&timestamp=" + new Date().getTime();
+		xmlHttp.open("GET",sUrl,true);
+		xmlHttp.onreadystatechange = function(){
+			if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+				var aResult = new Array();
+				if(xmlHttp.responseText.length){
+					aResult = xmlHttp.responseText.split(",");
+				setColors(aResult);	//顯示服務器結果
+				}
+				else
+					clearColors();
+			}
+		}
+		xmlHttp.send(null);
+	}		
+	else
+		clearColors();	//無輸入時清除提示框（例如用戶按del鍵）
+}
+</script>
+</head>
+<body>
+<form method="post" name="myForm1">
+Color: <input type="text" name="colors" id="colors" onkeyup="findColors();" />
+</form>
+<div id="popup">
+	<ul id="colors_ul"></ul>
+</div>
+</body>
+</html>

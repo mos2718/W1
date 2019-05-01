@@ -1,0 +1,20 @@
+{ "resourceType": "Patient",
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "text": "Computer-Stored Abulatory Records (COSTAR)"
+      },
+      "value": "10006579",
+      "assigner": {
+        "display": "AccMgr"
+      }
+    }
+  ],
+  "active": true,
+  "gender": "unknown",
+  "birthDate": "1924-10-10",
+  "deceasedBoolean": false
+}
+
+1729074

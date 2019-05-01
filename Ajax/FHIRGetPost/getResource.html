@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 43px;
+            width: 140px;
+        }
+        #Button2 {
+            height: 43px;
+            width: 140px;
+        }
+        #Button3 {
+            height: 43px;
+            width: 140px;
+        }		
+        #TextArea1 {
+            height: 256px;
+            width: 500px;
+        }
+        #TextArea2 {
+            height: 256px;
+            width: 500px;
+        }
+    </style>
+    <script src="HTTP2019.js"></script>
+     <script>
+                      
+            function getData() {
+			// alert("aaaa");
+                HTTPGetData("http://hapi.fhir.org/baseDstu3/Patient");
+				//http://hapi.fhir.org/baseDstu3/Patient/1576228/_history/1
+			//	http://203.64.84.214:8003/httptest/Get.aspx?id=miPersondata");
+               // HTTPGetData("http://hapi.fhir.org/baseDstu3/Patient/3590695/_history/1?_pretty=true");
+                //  HTTPGetData("http://203.64.84.213:20100/baseR4/Patient?organization=10051");
+            }
+
+            function showData() {
+               // alert(ret);
+                document.getElementById("TextArea1").innerText = ret;
+
+            }
+			
+        </script>	
+	
+	
+</head>
+<body>
+
+    <p>
+        <input id="Button1" onclick="getData()"  type="button" value="getData" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Button2" onclick="showData();" type="button" value="ShowData" /></p>
+        <input id="Button3" onclick="transferData();" type="button" value="transferData" /></p>
+
+    <p>
+        <textarea id="TextArea1" name="S1"></textarea></p>
+        <textarea id="TextArea2" name="S2"></textarea></p>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>XMLHTTPRequest Test</title>
+    
+    <script language="javascript">
+
+var xmlHttp;
+if(window.ActiveXObject)
+	   {//alert("Use MS ActiveX Object");  
+	    //For  IE4-IE6 or 7
+		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+else if(window.XMLHttpRequest)  // Mozilla、Firefox、Safari 
+		{//alert("Use Standard XMLHttpRequest"); 
+		xmlHttp = new XMLHttpRequest();
+    	}
+
+
+function checkReadyState()
+      {
+      // alert(xmlHttp.readyState);
+      //4 call back 完成,請參考 Ajax 訊息說明 
+      if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+			{
+				var aResult = new Array();
+				if(xmlHttp.responseText.length){ alert(xmlHttp.responseText); }
+			}
+     }		
+
+
+
+function Button1_onclick() {
+        var inStr;
+        inStr = document.getElementById("Text1").value; 
+		var sUrl = "AjaxTest1.aspx?InputData=" + inStr;
+		xmlHttp.open("GET",sUrl,true);
+		xmlHttp.onreadystatechange =checkReadyState;
+		xmlHttp.send(null);  
+}
+
+</script>
+    <style type="text/css">
+        #Text1
+        {
+            height: 23px;
+            width: 153px;
+        }
+        #Button1
+        {
+            width: 96px;
+            height: 26px;
+        }
+    </style>
+</head>
+    
+    
+</head>
+<body>
+
+    <p>
+        Input<input id="Text1" type="text" /><input id="Button1" type="button" 
+            value="button" onclick="return Button1_onclick()" /></p>
+
+</body>
+</html>
