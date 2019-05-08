@@ -44,12 +44,13 @@ table, th, td {
      
           
 
-            function showData() {
+       function showData() {
+                 alert(myObj[1].name);
                 // alert(ret);
                 // ret defined in HTTP2019.js for keep the response value
                 //  var myObj = JSON.parse(ret);
                 //  alert(myObj.length);
-
+                
               
                 var tableStr = "<tr><th>id</th><th>name</th> <th >telecom</th><th>gender</th><th>birthDate</th></tr>";
                 for (i = 0; i < myObj.length; i++) {
@@ -83,7 +84,7 @@ table, th, td {
                
                 document.getElementById("t1").innerHTML = tableStr;
                 addRowHandlers("t1");   // add event to table t1
-               
-            }
+              
+            }  
         </script>
 </html>
