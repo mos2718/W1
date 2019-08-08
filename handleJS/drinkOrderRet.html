@@ -11,13 +11,8 @@
             obj.name =   document.getElementById("n1").value;  
             obj.TEL  =   document.getElementById("TEL").value; 
             obj.addr  =  document.getElementById("addr").value;   
-            if (document.getElementById("size1").checked) { obj.size = document.getElementById("size1").value; }
-            if (document.getElementById("size2").checked) { obj.size = document.getElementById("size2").value; }
-
-            if (document.getElementById("ice1").checked) { obj.ice = document.getElementById("ice1").value; }
-            if (document.getElementById("ice2").checked) { obj.ice = document.getElementById("ice2").value; }
-            if (document.getElementById("ice3").checked) { obj.ice = document.getElementById("ice3").value; }
-             var myJSONstr = JSON.stringify(obj);
+            
+            var myJSONstr = JSON.stringify(obj);
             alert(myJSONstr);
             HTTPPostData("Post.aspx?id=drinkOrder", myJSONstr);
         }
