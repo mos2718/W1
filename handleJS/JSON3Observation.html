@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to modify an array value of a JSON object.</p>
+
+<p id="demo"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "resourceType": "Observation",
+  
+  "status": "final",
+  
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "29463-7",
+        "display": "Body Weight"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "27113001",
+        "display": "Body weight"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "effectiveDateTime": "2016-03-28",
+  "valueQuantity": {
+    "value": 185,
+    "unit": "lbs",
+    "system": "http://unitsofmeasure.org",
+    "code": "[lb_av]"
+  }
+}
+
+myObj.valueQuantity.value = 200;
+var myJSON = JSON.stringify(myObj);
+document.getElementById("demo").innerHTML = myJSON;
+
+</script>
+
+</body>
+</html>

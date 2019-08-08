@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to modify an array value of a JSON object.</p>
+
+<p id="demo"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = { "resourceType": "Patient",
+  "active": true,
+   "name": [
+    {
+      "family": "",
+      "given": [
+        "Homer",
+        "J"
+      ]
+    }
+  ],
+  "gender": "unknown",
+  "birthDate": "1924-10-10",
+  "telecom": [
+          {
+            "system": "phone",
+            "value": "555-555-2003",
+            "use": "work"
+          }
+        ]
+  
+}
+/* telecom type: contect point
+https://www.hl7.org/fhir/datatypes.html#ContactPoint
+*/
+myObj.telecom[0].use = "home";
+var myJSON = JSON.stringify(myObj);
+document.getElementById("demo").innerHTML = myJSON;
+
+</script>
+
+</body>
+</html>
